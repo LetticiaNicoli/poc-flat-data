@@ -1,5 +1,4 @@
-import { readJSON, writeJSON } from 'https://deno.land/x/flat/mod.ts'
-
+import { readCSV, writeCSV } from '../../src/csv.ts'
 const csv = await readCSV('./release.csv')
 
 // const newdata = [] 
