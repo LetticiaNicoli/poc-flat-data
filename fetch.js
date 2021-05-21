@@ -17,4 +17,5 @@ for(const row of rows) {
     newdata.push(formattedRow)
   }
 
+const newfile = `subset_of_release.json`
 await writeJSON(newfile, newData)
