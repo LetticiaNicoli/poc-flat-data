@@ -10,7 +10,7 @@ for(const row of rows) {
 
     for(const key in row) {
       if(key.startsWith("gs$")) {
-        formattedRow[key.inputValue] = row[key].$t
+        formattedRow[row[key].inputValue] = row[key].$t
       }
     }
 
