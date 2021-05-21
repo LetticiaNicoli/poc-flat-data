@@ -1,21 +1,21 @@
 import { readJSON, writeJSON } from 'https://deno.land/x/flat/mod.ts'
 
-const data = await readJSON('./release.json')
+const csv = await readCSV('./release.csv')
 
-const newdata = [] 
-const rows = data.feed.entry
+// const newdata = [] 
+// const rows = data.feed.entry
 
-for(const row of rows) {
-    const formattedRow = {}
+// for(const row of rows) {
+//     const formattedRow = {}
 
-    for(const key in row) {
-      if(key.startsWith("gs$")) {
-        formattedRow[key.replace("gs$", "")] = row[key].$t
-      }
-    }
+//     for(const key in row) {
+//       if(key.startsWith("gs$")) {
+//         formattedRow[key.replace("gs$", "")] = row[key].$t
+//       }
+//     }
 
-    newdata.push(formattedRow)
-  }
+//     newdata.push(formattedRow)
+//   }
 
-const newfile = `subset_of_release.json`
-await writeJSON(newfile, newdata)
+const newfile = `subset_of_csv.json`
+await writeJSON(newfile, csv)
