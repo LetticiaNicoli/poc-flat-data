@@ -18,4 +18,4 @@ for(const row of rows) {
   }
 
 const newfile = `subset_of_release.json`
-await writeJSON(newfile, newData)
+await writeJSON(newfile, newdata)
