@@ -1,21 +1,4 @@
-import { readJSON, writeJSON } from 'https://deno.land/x/flat/mod.ts'
-
-const data = await readJSON('./release.json')
-
-const newdata = [] 
-const rows = data.feed.entry
-
-for(const row of rows) {
-    const formattedRow = {}
-
-    for(const key in row) {
-      if(key.startsWith("gs$")) {
-        formattedRow[key.replace("gs$", "")] = row[key].$t
-      }
-    }
-
-    newdata.push(formattedRow)
-  }
-
-const newfile = `subset_of_release.json`
-await writeJSON(newfile, newdata)
+import { readCSV, writeJSON } from 'https://deno.land/x/flat/mod.ts'
+const csv = await readCSV('./poc.csv')
+const newfile = `subset_of_poc.json`
+await writeJSON(newfile, csv)

@@ -20,6 +20,6 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
-          http_url: https://spreadsheets.google.com/feeds/cells/1RWvSPwSOfAkA13ZMxFfbaX8sLH9c2Z3CfSX440J5c20/1/public/full?alt=json
-          downloaded_filename: release.json
+          http_url: ${{ secrets.CSV_DATA_POC }}
+          downloaded_filename: poc.csv
           postprocess: ./fetch.js
