@@ -1,7 +1,7 @@
 name: data
 on:
   schedule:
-    - cron: 0 0 * * *
+    - cron: 0 0 1 * *
   workflow_dispatch: {}
   push:
     paths:
@@ -20,6 +20,6 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
-          http_url: https://docs.google.com/spreadsheets/d/e/2PACX-1vSXwKTCWIaKX1KHt1QjTqTq2dDF10ZIJpoS51U8vKH3t0ikcRQaKmD1arIy0iA1WtOHnp-igYxhWRde/pub?gid=236611676&single=true&output=csv
-          downloaded_filename: release.csv
+          http_url: ${{ secrets.CSV_DATA_POC }}
+          downloaded_filename: poc.csv
           postprocess: ./fetch.js
